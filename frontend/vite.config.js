@@ -6,8 +6,8 @@ export default defineConfig({
   plugins: [react()],
   server:{
     proxy:{
-      '/auth':"http://localhost:4000",
-      "/products":"http://localhost:4000"
+      '/auth':"https://mern-authentication-app-git-main-nesaralam08s-projects.vercel.app",
+      "/products":"https://mern-authentication-app-git-main-nesaralam08s-projects.vercel.app"
     }
   }
 })
