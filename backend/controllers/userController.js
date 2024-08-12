@@ -18,7 +18,7 @@ const signupController = async(req,res)=>{
             password:hashpass
         })
         await newuser.save();
-        res.status(201).json({message:"Signup",success:true})
+        res.status(201).json({message:"Signup Successfully !",success:true})
     } catch (error) {
         return res.status(500).json({
             message:"Internal server error",
