@@ -13,5 +13,7 @@ connectDB(process.env.MONGO_URL)
 
 app.use('/auth',userRoute)
 app.use('/products',productRoute)
-
+app.get('/alam',(req,res)=>{
+    res.send("Nesar Alam")
+})
 app.listen(PORT,()=>console.log(`server is runnit at PORT : ${PORT}`))
