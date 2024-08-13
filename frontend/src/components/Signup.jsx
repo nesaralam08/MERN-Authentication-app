@@ -12,7 +12,7 @@ export default function Signup(){
             return handleError("Name, Email, Password is empty !!")
         }
         try {
-            axios.post('auth/signup',obj)
+            axios.post('/auth/signup',obj)
             .then((d)=>{
                 const {success,message} = d['data']
                 if(success){
@@ -23,8 +23,9 @@ export default function Signup(){
                 }
             })
             .catch((e)=>{
-                const message = e?.response.data.error.details[0]
-                handleError(message['message'])
+                console.log(e);
+                const {message} = e.response.data
+                handleError(message)
             })
         } catch (error) {
             return handleError(error)
