@@ -1,6 +1,7 @@
 import {Link, useNavigate} from 'react-router-dom'
 import { handleError, handleSuccess } from '../utils';
-import axios from "axios"
+// import axios from "axios"
+import axiosInstance from './axiosInstance';
 export default function Login(){
     const navigate = useNavigate()
     const handleform = (e)=>{
@@ -12,7 +13,7 @@ export default function Login(){
             return handleError("Email, Password is empty !!")
         }
         try {
-            axios.post('auth/login',obj)
+            axiosInstance.post('auth/login',obj)
             .then((d)=>{
                 const {success,token,name,message} = d['data']
                 if(success){

@@ -1,6 +1,7 @@
 import {Link, useNavigate} from 'react-router-dom'
 import { handleError, handleSuccess } from '../utils';
-import axios from "axios"
+// import axios from "axios"
+import axiosInstance from './axiosInstance';
 export default function Signup(){
     const navigate = useNavigate()
     const handleform = (e)=>{
@@ -12,7 +13,7 @@ export default function Signup(){
             return handleError("Name, Email, Password is empty !!")
         }
         try {
-            axios.post('/auth/signup',obj)
+            axiosInstance.post('/auth/signup',obj)
             .then((d)=>{
                 const {success,message} = d['data']
                 if(success){
@@ -34,7 +35,7 @@ export default function Signup(){
     return(
         <>
             <section className="h-screen w-full bg-slate-950 flex justify-center items-center">
-                <div className="h-auto w-96 bg-slate-900 p-5 rounded-lg">
+                <div className="lg:h-auto w-96 bg-slate-900 p-5 rounded-lg ">
                     <center><h1 className='mb-5 text-2xl font-semibold'>Sign up</h1></center>
                     <form className="flex flex-col gap-2" onSubmit={handleform}>
                         <div className="flex flex-col gap-2">

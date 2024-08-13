@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { handleError, handleSuccess } from "../utils"
-import axios from "axios"
+// import axios from "axios"
+import axiosInstance from "./axiosInstance"
 export default function Home(){
     const [loggeduser,setloggeduser] = useState('')
     const [products,setproducts] = useState([])
@@ -23,7 +24,7 @@ export default function Home(){
                 'Authorization':localStorage.getItem('token')
             }
         }
-        axios.get('/products',headers)
+        axiosInstance.get('/products',headers)
         .then((d)=>setproducts(d['data']))
         .catch((e)=>handleError(e))
     }
