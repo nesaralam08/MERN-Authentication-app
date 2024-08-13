@@ -35,20 +35,20 @@ export default function Signup(){
     return(
         <>
             <section className="h-screen w-full bg-slate-950 flex justify-center items-center">
-                <div className="lg:h-auto w-96 bg-slate-900 p-5 rounded-lg ">
+                <div className="h-auto w-80 bg-slate-900 p-5 rounded-lg md:w-96 m-3 md:m-0">
                     <center><h1 className='mb-5 text-2xl font-semibold'>Sign up</h1></center>
                     <form className="flex flex-col gap-2" onSubmit={handleform}>
                         <div className="flex flex-col gap-2">
                             <label htmlFor="name">Name</label>
-                            <input type="text" name="name" placeholder='Enter Name' className='outline-none p-1 rounded-sm bg-slate-200 text-black placeholder:text-gray-700'/>
+                            <input type="text" name="name" placeholder='ex: Nesar Alam' className='outline-none p-1 rounded-sm bg-slate-200 text-black placeholder:text-gray-700'/>
                         </div>
                         <div className="flex flex-col gap-2">
                             <label htmlFor="email">Email</label>
-                        <input type="email" name="email" placeholder='Enter Email'  className='outline-none p-1 rounded-sm bg-slate-200 text-black placeholder:text-gray-700'/>
+                        <input type="email" name="email" placeholder='ex: sample@gmail.com'  className='outline-none p-1 rounded-sm bg-slate-200 text-black placeholder:text-gray-700'/>
                         </div>
                         <div className="flex flex-col gap-2">
                             <label htmlFor="password">Password</label>
-                            <input type="password" name="password" placeholder='Enter Password'  className='outline-none p-1 rounded-sm bg-slate-200 text-black placeholder:text-gray-700'/>
+                            <input type="password" name="password" placeholder='ex: 123@abc'  className='outline-none p-1 rounded-sm bg-slate-200 text-black placeholder:text-gray-700'/>
                         </div>
                         <button type="submit" className='bg-green-700 p-2 rounded-sm mt-5'>Sign up</button>
                         <span>Already have an account? <Link to={'/login'} className='text-1xl text-blue-500'>Login</Link></span>

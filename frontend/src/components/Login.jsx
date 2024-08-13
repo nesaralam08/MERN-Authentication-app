@@ -37,16 +37,16 @@ export default function Login(){
     return(
         <>
             <section className="h-screen w-full bg-slate-950 flex justify-center items-center">
-                <div className="h-auto w-96 bg-slate-900 p-5 rounded-lg">
+                <div className="h-auto w-80 md:w-96 bg-slate-900 p-5 rounded-lg m-3 md:m-0">
                     <center><h1 className='mb-5 text-2xl font-semibold'>Login</h1></center>
                     <form className="flex flex-col gap-2" onSubmit={handleform}>
                         <div className="flex flex-col gap-2">
                             <label htmlFor="email">Email</label>
-                        <input type="email" name="email" placeholder='Enter Email'  className='outline-none p-1 rounded-sm bg-slate-200 text-black placeholder:text-gray-700'/>
+                        <input type="email" name="email" placeholder='ex: sample@gmail.com'  className='outline-none p-1 rounded-sm bg-slate-200 text-black placeholder:text-gray-700'/>
                         </div>
                         <div className="flex flex-col gap-2">
                             <label htmlFor="password">Password</label>
-                            <input type="password" name="password" placeholder='Enter Password'  className='outline-none p-1 rounded-sm bg-slate-200 text-black placeholder:text-gray-700'/>
+                            <input type="password" name="password" placeholder='ex: 124@abc'  className='outline-none p-1 rounded-sm bg-slate-200 text-black placeholder:text-gray-700'/>
                         </div>
                         <button type="submit" className='bg-green-700 p-2 rounded-sm mt-5'>Login</button>
                         <span>Don't have an account? <Link to={'/signup'} className='text-1xl text-blue-500'>Sign up</Link></span>
